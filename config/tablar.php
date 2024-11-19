@@ -10,10 +10,10 @@ return [
     |
     */
 
-    'title' => 'Tablar',
+    'title' => 'Carwashappy',
     'title_prefix' => '',
     'title_postfix' => '',
-    'bottom_title' => 'Tablar',
+    'bottom_title' => 'Carwashappy',
     'current_version' => 'v4.8',
 
 
@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'layout' => 'horizontal',
+    'layout' => 'vertical',
     //boxed, combo, condensed, fluid, fluid-vertical, horizontal, navbar-overlap, navbar-sticky, rtl, vertical, vertical-right, vertical-transparent
 
     'layout_light_sidebar' => null,
@@ -147,26 +147,26 @@ return [
         [
             'text' => 'Home',
             'icon' => 'ti ti-home',
-            'url' => 'home'
+            'url' => '/home'
         ],
 
         [
-            'text' => 'Support 1',
+            'text' => 'Citas',
             'url' => '#',
             'icon' => 'ti ti-help',
             'active' => ['support1'],
             'submenu' => [
                 [
-                    'text' => 'Ticket',
-                    'url' => 'support1',
+                    'text' => 'Agendar',
+                    'url' => '/cita',
                     'icon' => 'ti ti-article',
                 ]
             ],
         ],
 
         [
-            'text' => 'Support 2',
-            'url' => '#',
+            'text' => 'Servicios',
+            'url' => '#',   
             'icon' => 'ti ti-help',
             'active' => ['support2'],
             'submenu' => [
@@ -188,6 +188,7 @@ return [
                     'text' => 'Ticket',
                     'url' => 'support3',
                     'icon' => 'ti ti-article',
+                    
                 ]
             ],
         ],
