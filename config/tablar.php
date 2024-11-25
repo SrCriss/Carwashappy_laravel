@@ -152,33 +152,17 @@ return [
 
         [
             'text' => 'Citas',
-            'url' => '#',
-            'icon' => 'ti ti-help',
-            'active' => ['support1'],
-            'submenu' => [
-                [
-                    'text' => 'Agendar',
-                    'url' => '/cita',
-                    'icon' => 'ti ti-article',
-                ]
-            ],
+            'icon' => 'ti ti-calendar',
+            'url' => '/citas'
         ],
 
         [
             'text' => 'Servicios',
-            'url' => '#',   
-            'icon' => 'ti ti-help',
-            'active' => ['support2'],
-            'submenu' => [
-                [
-                    'text' => 'Ticket',
-                    'url' => 'support2',
-                    'icon' => 'ti ti-article',
-                ]
-            ],
+            'icon' => 'ti ti-car',
+            'url' => '/servicios',   
         ],
 
-        [
+        /* [
             'text' => 'Support 3',
             'url' => '#',
             'icon' => 'ti ti-help',
@@ -192,7 +176,7 @@ return [
                     
                 ]
             ],
-        ],
+        ], */
 
     ],
 

@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('citas', function (Blueprint $table) {
             $table->id();
-            $table->string('fecha_cita');
-            $table->string('hora_cita');
-            $table->string('estado_cita');
+            $table->date('fecha_cita');
+            $table->time('hora_cita');
+            /* $table->string('estado_cita'); */
             $table->unsignedBigInteger('id_usuario');
             $table->unsignedBigInteger('id_servicio');
             
