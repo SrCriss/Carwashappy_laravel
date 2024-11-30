@@ -22,7 +22,7 @@
 <div class="form-group mb-3">
     <label class="form-label"> {{ Form::label('hora_cita') }}</label>
     <div>
-        {{ Form::text('hora_cita', $cita->hora_cita, [
+        {{ Form::time('hora_cita', $cita->hora_cita, [
     'class' => 'form-control' .
         ($errors->has('hora_cita') ? ' is-invalid' : ''),
     'placeholder' => 'Hora Cita'

@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'layout' => 'vertical',
+    'layout' => 'horizontal',
     //boxed, combo, condensed, fluid, fluid-vertical, horizontal, navbar-overlap, navbar-sticky, rtl, vertical, vertical-right, vertical-transparent
 
     'layout_light_sidebar' => null,

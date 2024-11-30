@@ -16,13 +16,32 @@ class ServicioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    /*public function index($view = 'servicio.index')
     {
         $servicios = Servicio::paginate(10);
 
-        return view('servicio.index', compact('servicios'))
-            ->with('i', (request()->input('page', 1) - 1) * $servicios->perPage());
-    }
+         return view('servicio.index', compact('servicios'))
+         ->with('i', (request()->input('page', 1) - 1) * $servicios->perPage()); 
+         
+         return view('servicio.index', compact('servicios'));
+        }*/
+
+        public function userIndex()
+        {
+            $servicios = Servicio::paginate(10); // Cambia este modelo si usas otro.
+            /* dd($servicios); */
+            return view('cliente', compact('servicios'));
+        }
+        
+
+public function adminIndex()
+{
+    $servicios = Servicio::paginate(10);
+
+    return view('servicio.index', compact('servicios'))
+            ->with('i', (request()->input('page', 1) - 1) * $servicios->perPage()); // Envía a la vista del administrador
+}
+
 
     /**
      * Show the form for creating a new resource.
@@ -104,6 +123,7 @@ class ServicioController extends Controller
         $servicio = Servicio::find($id)->delete();
 
         return redirect()->route('servicios.index')
+
             ->with('success', 'Servicio deleted successfully');
     }
 }
