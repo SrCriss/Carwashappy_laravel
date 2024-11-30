@@ -16,15 +16,14 @@ class ServicioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    /*public function index($view = 'servicio.index')
+    public function index()
     {
         $servicios = Servicio::paginate(10);
 
          return view('servicio.index', compact('servicios'))
          ->with('i', (request()->input('page', 1) - 1) * $servicios->perPage()); 
          
-         return view('servicio.index', compact('servicios'));
-        }*/
+        }
 
         public function userIndex()
         {

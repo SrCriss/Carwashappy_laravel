@@ -159,7 +159,7 @@ return [
         [
             'text' => 'Servicios',
             'icon' => 'ti ti-car',
-            'url' => '/servicios',   
+            'url' => 'admin/servicios',   
         ],
 
         /* [
