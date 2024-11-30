@@ -28,7 +28,7 @@ class ServicioController extends Controller
 
         public function userIndex()
         {
-            $servicios = Servicio::paginate(10); // Cambia este modelo si usas otro.
+            $servicios = Servicio::paginate(10);
             /* dd($servicios); */
             return view('cliente', compact('servicios'));
         }
