@@ -13,20 +13,27 @@ return new class extends Migration
     {
         Schema::create('citas', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre');
+            $table->string('apellido');
+            $table->integer('nro_identificacion');
+            $table->string('telefono');
+            $table->string('email')->unique();
             $table->date('fecha_cita');
             $table->time('hora_cita');
-            /* $table->string('estado_cita'); */
-            $table->unsignedBigInteger('id_usuario');
+
             $table->unsignedBigInteger('id_servicio');
             
-            $table->foreign('id_usuario')
-            ->references('id')
-            ->on('usuarios')
-            ->onDelete('cascade');
             $table->foreign('id_servicio')
             ->references('id')
             ->on('servicios')
+            ->onDelete('cascade'); 
+            
+            /*  $table->foreign('id_usuario')
+            ->references('id')
+            ->on('usuarios')
             ->onDelete('cascade');
+            $table->unsignedBigInteger('id_usuario');
+            */
             $table->timestamps();
         });
     }

@@ -85,10 +85,13 @@
                                         </svg>
                                     </th>
                                     
+										<th>Nombre</th>
+										<th>Apellido</th>
+										<th>Nro Identificacion</th>
+										<th>Telefono</th>
+										<th>Email</th>
 										<th>Fecha Cita</th>
 										<th>Hora Cita</th>
-										<th>Estado Cita</th>
-										<th>Id Usuario</th>
 										<th>Id Servicio</th>
 
                                     <th class="w-1"></th>
@@ -102,10 +105,13 @@
                                                    aria-label="Select cita"></td>
                                         <td>{{ ++$i }}</td>
                                         
+											<td>{{ $cita->nombre }}</td>
+											<td>{{ $cita->apellido }}</td>
+											<td>{{ $cita->nro_identificacion }}</td>
+											<td>{{ $cita->telefono }}</td>
+											<td>{{ $cita->email }}</td>
 											<td>{{ $cita->fecha_cita }}</td>
 											<td>{{ $cita->hora_cita }}</td>
-											<td>{{ $cita->estado_cita }}</td>
-											<td>{{ $cita->id_usuario }}</td>
 											<td>{{ $cita->id_servicio }}</td>
 
                                         <td>

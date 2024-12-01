@@ -28,12 +28,15 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#agendar">Agendar</a>
                     </li>
+                    <li class="nav-item">
+                        <a class ="nav-link" href="{{ url('login') }}">Iniciar Sesión</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section>
+<!--     <section>
 
     <div
         class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
@@ -52,7 +55,7 @@
         </div>
         @endif
 
-</section>
+</section> -->
 
 
 
@@ -137,7 +140,7 @@
             <h2 class="text-center mb-5">Agenda tu Cita</h2>
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    <form id="reservationForm" class="card p-4">
+                    <form method="POST" action="./?Controller=CitaController&store" id="reservationForm" class="card p-4">
                         <div class="mb-3">
                             <label for="nombre" class="form-label">Nombre</label>
                             <input type="text" class="form-control" id="nombre" required>
@@ -145,6 +148,10 @@
                         <div class="mb-3">
                             <label for="apellido" class="form-label">Apellido</label>
                             <input type="text" class="form-control" id="apellido" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="nro_Documento" class="form-label">Nro. Documento</label>
+                            <input type="text" class="form-control" id="nro_Documento" required>
                         </div>
                         <div class="mb-3">
                             <label for="telefono" class="form-label">Teléfono</label>

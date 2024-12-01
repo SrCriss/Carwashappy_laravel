@@ -50,20 +50,32 @@
                         <div class="card-body">
                             
 <div class="form-group">
+<strong>Nombre:</strong>
+{{ $cita->nombre }}
+</div>
+<div class="form-group">
+<strong>Apellido:</strong>
+{{ $cita->apellido }}
+</div>
+<div class="form-group">
+<strong>Nro Identificacion:</strong>
+{{ $cita->nro_identificacion }}
+</div>
+<div class="form-group">
+<strong>Telefono:</strong>
+{{ $cita->telefono }}
+</div>
+<div class="form-group">
+<strong>Email:</strong>
+{{ $cita->email }}
+</div>
+<div class="form-group">
 <strong>Fecha Cita:</strong>
 {{ $cita->fecha_cita }}
 </div>
 <div class="form-group">
 <strong>Hora Cita:</strong>
 {{ $cita->hora_cita }}
-</div>
-<div class="form-group">
-<strong>Estado Cita:</strong>
-{{ $cita->estado_cita }}
-</div>
-<div class="form-group">
-<strong>Id Usuario:</strong>
-{{ $cita->id_usuario }}
 </div>
 <div class="form-group">
 <strong>Id Servicio:</strong>

@@ -13,6 +13,9 @@ Route::resource('/admin/servicios', ServicioController::class);
 // Vista para usuarios generales
 Route::get('/cliente', [ServicioController::class, 'userIndex'])->name('user.servicios');
 
+Route::get('/citas/create', [ServicioController::class, 'citaIndex'])->name('cita.form');
+
+
 Route::get('/', function () {
     return redirect('/cliente');
 });
@@ -33,3 +36,4 @@ Route::resource('/usuarios', UsuarioController::class);
 
 
 
+Route::resource('/cita', App\Http\Controllers\CitaController::class);
