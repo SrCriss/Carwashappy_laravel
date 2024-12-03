@@ -55,6 +55,5 @@ class Cita extends Model
         return $this->hasOne('App\Models\Servicio', 'id', 'id_servicio');
     }
     
-    
 
 }

@@ -140,7 +140,8 @@
             <h2 class="text-center mb-5">Agenda tu Cita</h2>
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    <form method="POST" action="./?Controller=CitaController&store" id="reservationForm" class="card p-4">
+                    <form method="POST" action="{{ route('citas.store') }}" role="form"
+                    enctype="multipart/form-data" id="reservationForm" class="card p-4">
                         <div class="mb-3">
                             <label for="nombre" class="form-label">Nombre</label>
                             <input type="text" class="form-control" id="nombre" required>

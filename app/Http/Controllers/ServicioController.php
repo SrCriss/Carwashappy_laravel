@@ -27,9 +27,8 @@ class ServicioController extends Controller
 
         public function userIndex()
         {
-            $servicios = Servicio::paginate(10);
-            /* dd($servicios); */
-            return view('cliente', compact('servicios'));
+            $servicios = Servicio::paginate(10); 
+           return view('cliente', compact('servicios'));
         }
         
 
@@ -45,9 +44,9 @@ public function citaIndex()
 {
     $servicios = Servicio::paginate(10);
 
-    dd($servicios);
     return view('cita.form', compact('servicios'));
 }
+
 
 
     /**
