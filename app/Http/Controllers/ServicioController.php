@@ -43,7 +43,7 @@ public function adminIndex()
 public function citaIndex()
 {
     $servicios = Servicio::paginate(10);
-
+    dd($servicios);
     return view('cita.form', compact('servicios'));
 }
 
