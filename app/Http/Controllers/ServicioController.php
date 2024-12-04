@@ -26,8 +26,9 @@ class ServicioController extends Controller
         }
 
         public function userIndex()
+
         {
-            $servicios = Servicio::paginate(10); 
+            $servicios = Servicio::all();
            return view('cliente', compact('servicios'));
         }
         

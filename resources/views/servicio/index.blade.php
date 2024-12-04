@@ -102,7 +102,7 @@
                                         
 											<td>{{ $servicio->nombre_servicio }}</td>
 											<td>{{ $servicio->descripcion_servicio }}</td>
-											<td>{{ $servicio->precio_servicio }}</td>
+											<td>${{ number_format($servicio->precio_servicio, 0, ',', '.') }}</td>
 
                                         <td>
                                             <div class="btn-list flex-nowrap">

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carwashappy</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="resources/css/styles.css">
+    @vite('resources/css/styles.css')
 </head>
 
 <body>
@@ -123,9 +123,6 @@
                             <p class="text-center">No hay servicios disponibles actualmente.</p>
                         </div>
                     @endforelse
-                </div>
-                <div class="mt-4 d-flex justify-content-center">
-                    {!! $servicios->links() !!} <!-- Renderiza la paginación -->
                 </div>
             </div>
         </section>
