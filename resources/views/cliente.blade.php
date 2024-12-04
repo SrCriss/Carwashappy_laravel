@@ -140,40 +140,40 @@
             <h2 class="text-center mb-5">Agenda tu Cita</h2>
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    <form method="POST" action="{{ route('citas.store') }}" id="ajaxForm" role="form"
+                    <form method="POST" action="{{ route('citas.storeCliente') }}" id="ajaxForm" role="form"
                     enctype="multipart/form-data" class="card p-4">
                     @csrf
                         <div class="mb-3">
-                            <label for="nombre" name="nombre" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" required>
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" name="nombre" class="form-control" id="nombre" required>
                         </div>
                         <div class="mb-3">
-                            <label for="apellido" name="apellido" class="form-label">Apellido</label>
-                            <input type="text" class="form-control" id="apellido" required>
+                            <label for="apellido"  class="form-label">Apellido</label>
+                            <input type="text" name="apellido" class="form-control" id="apellido" required>
                         </div>
                         <div class="mb-3">
-                            <label for="nro_Documento" name="nro_identificacion" class="form-label">Nro. Documento</label>
-                            <input type="text" class="form-control" id="nro_Documento" required>
+                            <label for="nro_identificacion"  class="form-label">Nro. identificacion</label>
+                            <input type="text" name="nro_identificacion" class="form-control" id="nro_identificacion" required>
                         </div>
                         <div class="mb-3">
-                            <label for="telefono" name="telefono" class="form-label">Teléfono</label>
-                            <input type="tel" class="form-control" id="telefono" required>
+                            <label for="telefono" class="form-label">Teléfono</label>
+                            <input type="tel" name="telefono" class="form-control" id="telefono" required>
                         </div>
                         <div class="mb-3">
-                            <label for="email" name="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" required>
+                            <label for="email"  class="form-label">Email</label>
+                            <input type="email" name="email" class="form-control" id="email" required>
                         </div>
                         <div class="mb-3">
-                            <label for="fecha" name="fecha_cita" class="form-label">Fecha</label>
-                            <input type="date" class="form-control" id="fecha" required>
+                            <label for="fecha_cita" class="form-label">Fecha</label>
+                            <input type="date" name="fecha_cita" class="form-control" id="fecha_cita" required>
                         </div>
                         <div class="mb-3">
-                            <label for="hora" name="hora_cita" class="form-label">Hora</label>
-                            <input type="time" class="form-control" id="hora" required>
+                            <label for="hora_cita" class="form-label">Hora</label>
+                            <input type="time" name="hora_cita" class="form-control" id="hora_cita" required>
                         </div>
                         <div class="mb-3">
-                            <label for="servicio" class="form-label">Servicio</label>
-                            <select class="form-select" name="id_servicio" id="servicio" required>
+                            <label for="id_servicio" class="form-label">Servicio</label>
+                            <select class="form-select" name="id_servicio" id="id_servicio" required>
                                 <!-- Las opciones se cargarán dinámicamente -->
                                 <option value="" disabled selected>Selecciona un Servicio</option>
 

@@ -54,6 +54,16 @@ class CitaController extends Controller
             ->with('success', 'Cita created successfully.');
     }
 
+    public function storeCliente(Request $request)
+    {
+        request()->validate(Cita::$rules);
+
+        $cita = Cita::create($request->all());
+
+        return redirect()->route('cliente')
+            ->with('success', 'Cita creada exitosamente.');
+    }
+
     /**
      * Display the specified resource.
      *

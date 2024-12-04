@@ -18,7 +18,7 @@ Route::get('/cliente', [ServicioController::class, 'userIndex'])->name('user.ser
 
 Route::get('/', function () {
     return redirect('/cliente');
-});
+})->name('cliente');
 Auth::routes();
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -31,6 +31,8 @@ Route::resource('/usuarios', UsuarioController::class);
 
 
 Route::resource('/citas', CitaController::class);
+
+Route::post('/cliente/storeCliente', [CitaController::class, 'storeCliente'])->name('citas.storeCliente');
 
 /* Route::resource('/usuarios', UsuarioController::class);
  */
