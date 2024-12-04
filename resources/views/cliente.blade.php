@@ -140,39 +140,40 @@
             <h2 class="text-center mb-5">Agenda tu Cita</h2>
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    <form method="POST" action="{{ route('citas.store') }}" role="form"
-                    enctype="multipart/form-data" id="reservationForm" class="card p-4">
+                    <form method="POST" action="{{ route('citas.store') }}" id="ajaxForm" role="form"
+                    enctype="multipart/form-data" class="card p-4">
+                    @csrf
                         <div class="mb-3">
-                            <label for="nombre" class="form-label">Nombre</label>
+                            <label for="nombre" name="nombre" class="form-label">Nombre</label>
                             <input type="text" class="form-control" id="nombre" required>
                         </div>
                         <div class="mb-3">
-                            <label for="apellido" class="form-label">Apellido</label>
+                            <label for="apellido" name="apellido" class="form-label">Apellido</label>
                             <input type="text" class="form-control" id="apellido" required>
                         </div>
                         <div class="mb-3">
-                            <label for="nro_Documento" class="form-label">Nro. Documento</label>
+                            <label for="nro_Documento" name="nro_identificacion" class="form-label">Nro. Documento</label>
                             <input type="text" class="form-control" id="nro_Documento" required>
                         </div>
                         <div class="mb-3">
-                            <label for="telefono" class="form-label">Teléfono</label>
+                            <label for="telefono" name="telefono" class="form-label">Teléfono</label>
                             <input type="tel" class="form-control" id="telefono" required>
                         </div>
                         <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
+                            <label for="email" name="email" class="form-label">Email</label>
                             <input type="email" class="form-control" id="email" required>
                         </div>
                         <div class="mb-3">
-                            <label for="fecha" class="form-label">Fecha</label>
+                            <label for="fecha" name="fecha_cita" class="form-label">Fecha</label>
                             <input type="date" class="form-control" id="fecha" required>
                         </div>
                         <div class="mb-3">
-                            <label for="hora" class="form-label">Hora</label>
+                            <label for="hora" name="hora_cita" class="form-label">Hora</label>
                             <input type="time" class="form-control" id="hora" required>
                         </div>
                         <div class="mb-3">
                             <label for="servicio" class="form-label">Servicio</label>
-                            <select class="form-select" id="servicio" required>
+                            <select class="form-select" name="id_servicio" id="servicio" required>
                                 <!-- Las opciones se cargarán dinámicamente -->
                                 <option value="" disabled selected>Selecciona un Servicio</option>
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cita;
 use Illuminate\Http\Request;
+use App\Models\Servicio;
 
 /**
  * Class CitaController
@@ -32,7 +33,9 @@ class CitaController extends Controller
     public function create()
     {
         $cita = new Cita();
-        return view('cita.create', compact('cita'));
+        $servicios = Servicio::all();
+
+        return view('cita.create', compact('cita', 'servicios'));
     }
 
     /**
@@ -74,7 +77,9 @@ class CitaController extends Controller
     {
         $cita = Cita::find($id);
 
-        return view('cita.edit', compact('cita'));
+        $servicios = Servicio::all();
+
+        return view('cita.edit', compact('cita', 'servicios'));
     }
 
     /**

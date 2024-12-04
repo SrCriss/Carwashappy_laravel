@@ -47,7 +47,7 @@
 <div class="form-group mb-3">
     <label class="form-label">   {{ Form::label('fecha_cita') }}</label>
     <div>
-        {{ Form::text('fecha_cita', $cita->fecha_cita, ['class' => 'form-control' .
+        {{ Form::date('fecha_cita', $cita->fecha_cita, ['class' => 'form-control' .
         ($errors->has('fecha_cita') ? ' is-invalid' : ''), 'placeholder' => 'Fecha Cita']) }}
         {!! $errors->first('fecha_cita', '<div class="invalid-feedback">:message</div>') !!}
         <small class="form-hint">cita <b>fecha_cita</b> instruction.</small>
@@ -56,19 +56,32 @@
 <div class="form-group mb-3">
     <label class="form-label">   {{ Form::label('hora_cita') }}</label>
     <div>
-        {{ Form::text('hora_cita', $cita->hora_cita, ['class' => 'form-control' .
+        {{ Form::time('hora_cita', $cita->hora_cita, ['class' => 'form-control' .
         ($errors->has('hora_cita') ? ' is-invalid' : ''), 'placeholder' => 'Hora Cita']) }}
         {!! $errors->first('hora_cita', '<div class="invalid-feedback">:message</div>') !!}
         <small class="form-hint">cita <b>hora_cita</b> instruction.</small>
     </div>
 </div>
-<div class="form-group mb-3">
+<!-- <div class="form-group mb-3">
     <label class="form-label">   {{ Form::label('id_servicio') }}</label>
 
     {{ Form::label('id_servicio', 'Servicio', ['class' => 'form-label']) }}
     {{ Form::select('id_servicio', 
-        $servicios->pluck('nombre_precio', 'id'), 
+        $servicios->pluck('nombre_servicio', 'id'), 
         $cita->id_servicio ?? null, 
+        ['class' => 'form-select' . ($errors->has('id_servicio') ? ' is-invalid' : ''), 'placeholder' => 'Selecciona un Servicio']
+    ) }}
+    {!! $errors->first('id_servicio', '<div class="invalid-feedback">:message</div>') !!}
+</div> -->
+
+<div class="form-group mb-3">
+    {{ Form::label('id_servicio', 'Servicio', ['class' => 'form-label']) }}
+    {{ Form::select(
+        'id_servicio',
+        $servicios->mapWithKeys(function ($servicio) {
+            return [$servicio->id => $servicio->nombre_servicio . ' - $' . number_format($servicio->precio_servicio, 0, ',', '.')];
+        }),
+        $cita->id_servicio ?? null,
         ['class' => 'form-select' . ($errors->has('id_servicio') ? ' is-invalid' : ''), 'placeholder' => 'Selecciona un Servicio']
     ) }}
     {!! $errors->first('id_servicio', '<div class="invalid-feedback">:message</div>') !!}

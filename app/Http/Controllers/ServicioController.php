@@ -40,15 +40,6 @@ public function adminIndex()
             ->with('i', (request()->input('page', 1) - 1) * $servicios->perPage()); // Envía a la vista del administrador
 }
 
-public function citaIndex()
-{
-    $servicios = Servicio::paginate(10);
-    dd($servicios);
-    return view('cita.form', compact('servicios'));
-}
-
-
-
     /**
      * Show the form for creating a new resource.
      *
