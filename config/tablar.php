@@ -144,11 +144,11 @@ return [
 
     'menu' => [
         // Navbar items:
-        [
+        /* [
             'text' => 'Home',
             'icon' => 'ti ti-home',
             'url' => '/home'
-        ],
+        ], */
 
         [
             'text' => 'Citas',

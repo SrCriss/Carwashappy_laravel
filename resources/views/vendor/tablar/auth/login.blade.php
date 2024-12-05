@@ -2,20 +2,21 @@
 @section('title', 'Login')
 @section('content')
     <div class="container container-tight py-4">
-        <div class="text-center mb-1 mt-5">
+        <!-- Logo del Login -->
+        <!-- <div class="text-center mb-1 mt-5">
             <a href="" class="navbar-brand navbar-brand-autodark">
                 <img src="{{asset(config('tablar.auth_logo.img.path','assets/logo.svg'))}}" height="36"
                      alt=""></a>
-        </div>
+        </div> -->
         <div class="card card-md">
             <div class="card-body">
-                <h2 class="h2 text-center mb-4">Login to your account</h2>
+                <h2 class="h2 text-center mb-4">Iniciar sesión</h2>
                 <form action="{{route('login')}}" method="post" autocomplete="off" novalidate>
                     @csrf
                     <div class="mb-3">
-                        <label class="form-label">Email address</label>
+                        <label class="form-label">Correo</label>
                         <input type="email" class="form-control @error('email') is-invalid @enderror" name="email"
-                               placeholder="your@email.com"
+                               placeholder="tu@email.com"
                                autocomplete="off">
                         @error('email')
                         <div class="invalid-feedback">{{ $message }}</div>
@@ -23,9 +24,9 @@
                     </div>
                     <div class="mb-2">
                         <label class="form-label">
-                            Password
+                            Contraseña
                             <span class="form-label-description">
-                    <a href="{{route('password.request')}}">I forgot password</a>
+                    <a href="{{route('password.request')}}">¿Olvidaste tu contraseña?</a>
                   </span>
                         </label>
                         <div class="input-group input-group-flat">
@@ -51,20 +52,20 @@
                     <div class="mb-2">
                         <label class="form-check">
                             <input type="checkbox" class="form-check-input"/>
-                            <span class="form-check-label">Remember me on this device</span>
+                            <span class="form-check-label">Recordar en este dispositivo</span>
                         </label>
                     </div>
                     <div class="form-footer">
-                        <button type="submit" class="btn btn-primary w-100">Sign in</button>
+                        <button type="submit" class="btn btn-primary w-100">Iniciar sesión</button>
                     </div>
                 </form>
             </div>
-            <div class="hr-text">or</div>
+            <!-- <div class="hr-text">or</div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col"><a href="#" class="btn btn-white w-100">
+                    <div class="col"><a href="#" class="btn btn-white w-100"> -->
                             <!-- Download SVG icon from http://tabler-icons.io/i/brand-github -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon text-github" width="24" height="24"
+                            <!-- <svg xmlns="http://www.w3.org/2000/svg" class="icon text-github" width="24" height="24"
                                  viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                                  stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -73,9 +74,9 @@
                             </svg>
                             Login with Github
                         </a></div>
-                    <div class="col"><a href="#" class="btn btn-white w-100">
+                    <div class="col"><a href="#" class="btn btn-white w-100"> -->
                             <!-- Download SVG icon from http://tabler-icons.io/i/brand-twitter -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon text-twitter" width="24" height="24"
+                            <!--<svg xmlns="http://www.w3.org/2000/svg" class="icon text-twitter" width="24" height="24"
                                  viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                                  stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -85,12 +86,12 @@
                             Login with Twitter
                         </a></div>
                 </div>
-            </div>
+            </div> -->
         </div>
-        @if(Route::has('register'))
+        <!-- @if(Route::has('register'))
             <div class="text-center text-muted mt-3">
-                Don't have account yet? <a href="{{route('register')}}" tabindex="-1">Sign up</a>
+                ¿No tienes una cuenta? <a href="{{route('register')}}" tabindex="-1">Registrarte</a>
             </div>
-        @endif
+        @endif -->
     </div>
 @endsection
