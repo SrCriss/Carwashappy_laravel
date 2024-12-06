@@ -1,21 +1,59 @@
+# Laravel related
 /.phpunit.cache
-/node_modules
 /public/build
 /public/hot
 /public/storage
 /storage/*.key
 /storage/pail
+/storage/debugbar/*
+/storage/logs/*
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/testing/*
+/storage/framework/views/*
 /vendor
+
+# Environment files
+.env
+.env.*
 .env.backup
 .env.production
-.phpactor.json
-.phpunit.result.cache
-Homestead.json
-Homestead.yaml
-auth.json
-npm-debug.log
-yarn-error.log
-/.fleet
+
+# System specific
 /.idea
 /.vscode
 /.zed
+/.fleet
+.DS_Store
+Thumbs.db
+
+# Node and Composer dependencies
+/node_modules
+
+# PHPUnit
+.phpunit.result.cache
+
+# Homestead and Laravel configuration
+Homestead.json
+Homestead.yaml
+auth.json
+
+# Compiled and temporary files
+npm-debug.log
+yarn-error.log
+.phpactor.json
+composer.lock
+*.log
+*.cache
+*.temp
+*.bak
+
+# Coverage reports
+coverage/
+*.lcov
+
+# Laravel Mix
+/public/mix-manifest.json
+
+# Others
+/.env.testing
