@@ -122,3 +122,4 @@ class CitaController extends Controller
             ->with('success', 'Cita deleted successfully');
     }
 }
+

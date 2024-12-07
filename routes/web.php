@@ -2,19 +2,23 @@
 
 use App\Http\Controllers\CitaController;
 use App\Http\Controllers\ServicioController;
-use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 
 
  // Vista para administradores
-/* Route::get('/admin/servicios', [ServicioController::class, 'adminIndex'])->name('admin.servicios'); */
-Route::resource('/admin/servicios', ServicioController::class);
+Route::middleware(['auth'])->group(function () {
+    Route::prefix('admin')->group(function () {
+        Route::resource('servicios', ServicioController::class);
+        Route::resource('citas', CitaController::class);
+        
+    });
+    
+});
 
 // Vista para usuarios generales
-Route::get('/cliente', [ServicioController::class, 'userIndex'])->name('user.servicios');
-
-/* Route::get('/citas/create', [ServicioController::class, 'citaIndex'])->name('cita.form'); */
-
+Route::get('/cliente', [ServicioController::class, 'userIndex'])->middleware('guest')->name('user.servicios');
 
 Route::get('/', function () {
     return redirect('/cliente');
@@ -27,13 +31,18 @@ Auth::routes();
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('/usuarios', UsuarioController::class);
-
-
-Route::resource('/citas', CitaController::class);
-
 Route::post('/cliente/storeCliente', [CitaController::class, 'storeCliente'])->name('citas.storeCliente');
 
-/* Route::resource('/usuarios', UsuarioController::class);
- */
-/* Route::resource('/cita', CitaController::class); */
+Route::prefix('admin')->group(function () {
+    
+    Route::middleware(['guest'])->group(function () {
+        Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+        Route::post('login', [LoginController::class, 'login']);
+        
+    });
+    
+    Route::post('register', [RegisterController::class, 'register'])->middleware('auth');
+    Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register')->middleware('auth');
+    
+});
+

@@ -1,17 +1,11 @@
 # Laravel related
-/.phpunit.cache
-/public/build
-/public/hot
-/public/storage
-/storage/*.key
-/storage/pail
-/storage/debugbar/*
-/storage/logs/*
-/storage/framework/cache/*
-/storage/framework/sessions/*
-/storage/framework/testing/*
-/storage/framework/views/*
-/vendor
+.phpunit.cache
+public/build
+public/hot
+public/storage
+storage/
+vendor/
+
 
 # Environment files
 .env

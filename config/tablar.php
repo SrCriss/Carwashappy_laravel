@@ -153,7 +153,7 @@ return [
         [
             'text' => 'Citas',
             'icon' => 'ti ti-calendar',
-            'url' => '/citas'
+            'url' => 'admin/citas'
         ],
 
         [
