@@ -32,7 +32,7 @@ Este sistema facilita a los clientes agendar citas y permite a los administrador
 
 ### 1️⃣ Clona este repositorio  
 ```bash
-git clone git clone https://github.com/SrCriss/Carwashappy_laravel.git
+git clone https://github.com/SrCriss/Carwashappy_laravel.git
 ```
 
 ### 2️⃣ Navega al directorio del Proyecto
