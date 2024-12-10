@@ -7,7 +7,7 @@ Este software está diseñado para optimizar la gestión de servicios en autolav
 
 ## 📋 **Descripción**
 
-Este sistema facilita a los clientes agendar citas y permite a los administradores gestionar horarios, servicios, productos y el control de inventarios, todo desde una interfaz intuitiva. Ideal para mejorar la organización de tu negocio. 📈
+Este sistema facilita a los clientes agendar citas y permite a los administradores gestionar horarios, servicios, productos y el control de inventarios, todo desde una interfaz intuitiva. Ideal para mejorar la organización de tu negocio, hecho a partir de la plantilla de https://github.com/takielias/tablar. 📈
 
 ---
 
@@ -99,4 +99,3 @@ Este proyecto está bajo la licencia MIT.
 
 ### ✅ Conclusion
 Este proyecto busca simplificar las operaciones diarias de un autolavado, ofreciendo una herramienta potente y fácil de usar. ¡Gracias por usar nuestro sistema! 🌟
-
