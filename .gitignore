@@ -3,13 +3,11 @@
 public/build
 public/hot
 public/storage
-storage/
 vendor/
 
 
 # Environment files
 .env
-.env.*
 .env.backup
 .env.production
 

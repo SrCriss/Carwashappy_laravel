@@ -18,9 +18,10 @@ Este sistema facilita a los clientes agendar citas y permite a los administrador
   - Interfaz amigable.  
 
 - **Administradores**: 
-  - Crear, editar y eliminar citas.  
-  - Gestión de servicios con descripciones y costos.  
-  - Inventarios y seguimiento de ingresos/egresos.  
+  -✅ Crear, editar y eliminar citas.  
+  -✅ Gestión de servicios con descripciones y costos.  
+  -❌ Inventarios y seguimiento de ingresos/egresos. 
+  -❌ Enviar emails a clientes.
 
 - **Seguridad**:  
   - Control de acceso mediante rutas protegidas.  
@@ -37,7 +38,7 @@ git clone https://github.com/SrCriss/Carwashappy_laravel.git
 
 ### 2️⃣ Navega al directorio del Proyecto
 ```bash
-cd tu-repositorio
+cd Carwashappy_laravel
 ```
 ### 3️⃣ Instala las dependencias
 Asegúrate de tener instalado Composer y Node.js.
@@ -60,7 +61,7 @@ php artisan key:generate
 npm run dev
 ```
 ### 6️⃣ Ejecuta las migraciones
-Configura tu base de datos en el archivo .env y luego ejecuta:
+Configura tu base de datos en el archivo .env con el usuario y contraseña y luego ejecuta:
 ```bash
 php artisan migrate
 ```

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Cita;
 use Illuminate\Http\Request;
 use App\Models\Servicio;
+use Resend\Laravel\Facades\Resend;
+use Illuminate\Support\Facades\Mail;
 
 /**
  * Class CitaController
@@ -46,22 +48,35 @@ class CitaController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(Cita::$rules);
+        $rules = array_merge(Cita::$rules, Cita::getDynamicRules($request)); 
+        
+        request()->validate($rules);
 
         $cita = Cita::create($request->all());
 
         return redirect()->route('citas.index')
-            ->with('success', 'Cita created successfully.');
+            ->with('success', 'Cita creada con exito.');
     }
 
     public function storeCliente(Request $request)
     {
-        request()->validate(Cita::$rules);
-
+        $rules = array_merge(Cita::$rules, Cita::getDynamicRules($request)); 
+        
+        request()->validate($rules); 
+        
         $cita = Cita::create($request->all());
 
+        /* Enviar email a quien esta agendando la cita */
+        
+        Resend::emails()->send([
+            'from' => 'Carwashappy <onboarding@resend.dev>',
+            'to' => [$request->email],
+            'subject' => 'Agenda de cita de Carwashappy',
+            'html' => "<p>Hola que tal, has agendando una cita para el dia {{$request->fecha_cita}} a las , {{$request->hora_cita}} de nuestro servicios</p>",
+        ]);
+    
         return redirect()->route('cliente')
-            ->with('success', 'Cita creada exitosamente.');
+            ->with('success', 'Cita creada con exito.');
     }
 
     /**
@@ -101,12 +116,14 @@ class CitaController extends Controller
      */
     public function update(Request $request, Cita $cita)
     {
-        request()->validate(Cita::$rules);
+        $rules = array_merge(Cita::$rules, Cita::getDynamicRules($request)); 
+        
+        request()->validate($rules);
 
         $cita->update($request->all());
 
         return redirect()->route('citas.index')
-            ->with('success', 'Cita updated successfully');
+            ->with('success', 'Cita actualizada con exito');
     }
 
     /**
@@ -119,7 +136,7 @@ class CitaController extends Controller
         $cita = Cita::find($id)->delete();
 
         return redirect()->route('citas.index')
-            ->with('success', 'Cita deleted successfully');
+            ->with('success', 'Cita borrada con exito');
     }
 }
 

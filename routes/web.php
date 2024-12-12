@@ -41,8 +41,8 @@ Route::prefix('admin')->group(function () {
         
     });
     
-    Route::post('register', [RegisterController::class, 'register'])->middleware('auth');
-    Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register')->middleware('auth');
+    Route::post('register', [RegisterController::class, 'register']);
+    Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
     
 });
 

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('apellido');
             $table->integer('nro_identificacion');
             $table->string('telefono');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->date('fecha_cita');
             $table->time('hora_cita');
 

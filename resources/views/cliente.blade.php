@@ -119,31 +119,80 @@
                     @csrf
                         <div class="mb-3">
                             <label for="nombre" class="form-label">Nombre</label>
-                            <input type="text" name="nombre" class="form-control" id="nombre" required>
+                            <input type="text" name="nombre" class="form-control" id="nombre" value="{{old('nombre')}}" required>
+                            @error('nombre')
+                            <br>
+                                <span>*
+                                {{ $message }}
+                                </span>
+                            <br>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label for="apellido"  class="form-label">Apellido</label>
-                            <input type="text" name="apellido" class="form-control" id="apellido" required>
+                            <input type="text" name="apellido" class="form-control" id="apellido" value="{{old('apellido')}}" required>
+                            @error('apellido')
+                            <br>
+                                <span>*
+                                {{ $message }}
+                                </span>
+                            <br>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label for="nro_identificacion"  class="form-label">Nro. identificacion</label>
-                            <input type="text" name="nro_identificacion" class="form-control" id="nro_identificacion" required>
+                            <input type="text" name="nro_identificacion" class="form-control" id="nro_identificacion" value="{{old('nro_identificacion')}}" required>
+                            @error('nro_identificacion')
+                            <br>
+                                <span>*
+                                {{ $message }}
+                                </span>
+                            <br>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label for="telefono" class="form-label">Teléfono</label>
-                            <input type="tel" name="telefono" class="form-control" id="telefono" required>
+                            <input type="tel" name="telefono" class="form-control" id="telefono" value="{{old('telefono')}}" required>
+                            @error('telefono')
+                            <br>
+                                <span>*
+                                {{ $message }}
+                                </span>
+                            <br>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label for="email"  class="form-label">Email</label>
-                            <input type="email" name="email" class="form-control" id="email" required>
+                            <input type="email" name="email" class="form-control" id="email" value="{{old('email')}}" required>
+                            @error('email')
+                            <br>
+                                <span>*
+                                {{ $message }}
+                                </span>
+                            <br>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label for="fecha_cita" class="form-label">Fecha</label>
-                            <input type="date" name="fecha_cita" class="form-control" id="fecha_cita" required>
+                            <input type="date" name="fecha_cita" class="form-control" id="fecha_cita" value="{{old('fecha_cita')}}" required>
+                            @error('fecha_cita')
+                            <br>
+                                <span>*
+                                {{ $message }}
+                                </span>
+                            <br>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label for="hora_cita" class="form-label">Hora</label>
-                            <input type="time" name="hora_cita" class="form-control" id="hora_cita" required>
+                            <input type="time" name="hora_cita" class="form-control" id="hora_cita" value="{{old('hora_cita')}}" required>
+                            @error('hora_cita')
+                            <br>
+                                <span>*
+                                {{ $message }}
+                                </span>
+                            <br>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label for="id_servicio" class="form-label">Servicio</label>
@@ -153,15 +202,23 @@
 
                                 @foreach ($servicios as $servicio)
 
-                                    <option value="{{ $servicio->id }}">
+                                    <option value="{{ $servicio->id }}" {{old('id_servicio') == $servicio->id ? 'selected' : ''}}>
                                     {{$servicio->nombre_servicio }} - ${{number_format($servicio->precio_servicio, 0, ',', '.')}}
                                     </option>
                                 
                                 @endforeach
 
                             </select>
+                            @error('id_servicio')
+                            <br>
+                                <span>*
+                                {{ $message }}
+                                </span>
+                            <br>
+                            @enderror
                         </div>
-                        <button type="submit" class="btn btn-primary">Agendar Cita</button>
+                        <button type="submit" class="btn btn-primary" 
+                        onclick="if(!confirm('¿Desea agendar la cita con estos datos?')){return false;}">Agendar Cita</button>
                     </form>
                 </div>
             </div>

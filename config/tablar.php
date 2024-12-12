@@ -144,24 +144,38 @@ return [
 
     'menu' => [
         // Navbar items:
-        /* [
+        
+        [     /* Pagina donde se Dara la bienvenida al sistema  */
             'text' => 'Home',
             'icon' => 'ti ti-home',
             'url' => '/home'
-        ], */
+        ],
 
-        [
+        [/* Pagina donde se gestionan las citas */
             'text' => 'Citas',
             'icon' => 'ti ti-calendar',
             'url' => 'admin/citas'
         ],
 
-        [
+        [/* Pagina donde se gestionan los servicios */
             'text' => 'Servicios',
             'icon' => 'ti ti-car',
             'url' => 'admin/servicios',   
         ],
+         
+        [ /* Pagina donde se gestiona el intentario */ 
+            'text' => 'Inventario',
+            'icon' => 'ti ti-car',
+            'url' => 'admin/invetario',   
+        ], 
 
+         
+        [ /* Pagina donde se gestionan los ingresos */ 
+            'text' => 'Inventario',
+            'icon' => 'ti ti-car',
+            'url' => 'admin/invetario',   
+        ], 
+        
         /* [
             'text' => 'Support 3',
             'url' => '#',
