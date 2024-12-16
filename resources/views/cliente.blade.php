@@ -122,7 +122,7 @@
                             <input type="text" name="nombre" class="form-control" id="nombre" value="{{old('nombre')}}" required>
                             @error('nombre')
                             <br>
-                                <span>*
+                                <span style="color:red">*
                                 {{ $message }}
                                 </span>
                             <br>
@@ -133,7 +133,7 @@
                             <input type="text" name="apellido" class="form-control" id="apellido" value="{{old('apellido')}}" required>
                             @error('apellido')
                             <br>
-                                <span>*
+                                <span style="color:red">*
                                 {{ $message }}
                                 </span>
                             <br>
@@ -144,7 +144,7 @@
                             <input type="text" name="nro_identificacion" class="form-control" id="nro_identificacion" value="{{old('nro_identificacion')}}" required>
                             @error('nro_identificacion')
                             <br>
-                                <span>*
+                                <span style="color:red">*
                                 {{ $message }}
                                 </span>
                             <br>
@@ -155,7 +155,7 @@
                             <input type="tel" name="telefono" class="form-control" id="telefono" value="{{old('telefono')}}" required>
                             @error('telefono')
                             <br>
-                                <span>*
+                                <span style="color:red">*
                                 {{ $message }}
                                 </span>
                             <br>
@@ -166,7 +166,7 @@
                             <input type="email" name="email" class="form-control" id="email" value="{{old('email')}}" required>
                             @error('email')
                             <br>
-                                <span>*
+                                <span style="color:red">*
                                 {{ $message }}
                                 </span>
                             <br>
@@ -177,7 +177,7 @@
                             <input type="date" name="fecha_cita" class="form-control" id="fecha_cita" value="{{old('fecha_cita')}}" required>
                             @error('fecha_cita')
                             <br>
-                                <span>*
+                                <span style="color:red">*
                                 {{ $message }}
                                 </span>
                             <br>
@@ -188,7 +188,7 @@
                             <input type="time" name="hora_cita" class="form-control" id="hora_cita" value="{{old('hora_cita')}}" required>
                             @error('hora_cita')
                             <br>
-                                <span>*
+                                <span style="color:red">*
                                 {{ $message }}
                                 </span>
                             <br>
@@ -211,7 +211,7 @@
                             </select>
                             @error('id_servicio')
                             <br>
-                                <span>*
+                                <span style="color:red">*
                                 {{ $message }}
                                 </span>
                             <br>
